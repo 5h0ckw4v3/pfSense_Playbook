@@ -1,0 +1,11 @@
+---
+
+# tasks file for alias
+
+- name: Copiando o arquivo alias.txt para /home/user
+  copy: src=alias.txt dest=/home/user
+
+- name: Criando/Atualizando alias
+  shell: /usr/local/sbin/pfSsh.php < /home/user/alias.txt
+
+...

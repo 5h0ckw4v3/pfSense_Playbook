@@ -1,0 +1,9 @@
+init_config_arr(array('aliases', 'alias', 0));
+$config['aliases']['alias'][0]['name'] = 'host_ip_alias';
+$config['aliases']['alias'][0]['address'] = '8.8.8.8 8.8.4.4 1.1.1.1 1.0.0.1';
+$config['aliases']['alias'][0]['descr'] = 'dns google e cloudflare';
+$config['aliases']['alias'][0]['type'] = 'host';
+$config['aliases']['alias'][0]['detail'] = 'Added by ansible';
+write_config();
+exec;
+exit

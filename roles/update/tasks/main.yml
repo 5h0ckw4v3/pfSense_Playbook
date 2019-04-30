@@ -1,0 +1,11 @@
+---
+# tasks file for update
+
+#- name: Atualizando o pfSense - pacote pfSense-pkg-squid 
+#  shell: pkg upgrade pfSense-pkg-squid
+
+- name: Atualizando o pfSense - Repositorio
+  shell: pkg update
+  
+- name: Atualizando o pfSense - Sistema
+  shell: pkg upgrade -y

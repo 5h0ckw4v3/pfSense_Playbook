@@ -1,0 +1,11 @@
+# pfsense playbook
+#
+
+- name: pfSense Playbook
+  hosts: pfsense
+  roles:
+    #- backup
+    #- alias
+    #- rule
+    - update
+    #- common

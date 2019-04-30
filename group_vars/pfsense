@@ -1,0 +1,8 @@
+ansible_ssh_port: 22
+ansible_ssh_user: nwpro
+ansible_ssh_pass: npro
+ansible_become: yes
+ansible_become_method: sudo	
+ansible_connection: ssh
+ansible_python_interpreter: /usr/local/bin/python2.7
+ansible_shell_executable: /bin/sh

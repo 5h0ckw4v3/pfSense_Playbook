@@ -1,0 +1,17 @@
+---
+
+- name: Gravando data e hora em uma variavel para usar como nome do arquivo
+  shell: echo "`hostname`_`date +%Y-%m-%d`"
+  register: output
+
+- name: Gerando backup
+  shell: cat /cf/conf/config.xml > /tmp/{{item}}.xml
+  loop:
+  - "{{ output.stdout }}"
+
+- name: Baixando o backup
+  fetch: src=/tmp/{{item}}.xml dest=/ansible/pfsense/roles/backup/files
+  loop:
+  - "{{ output.stdout }}"
+
+...
