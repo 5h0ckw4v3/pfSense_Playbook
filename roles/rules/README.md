@@ -1,31 +1,50 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+pfSense role rules creator
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+change the alias name in /roles/rules/tasks/main.yml
+this part of shell command `ifconfig vmx0 | grep inet | grep -v inet6 | awk '{print $2}' | cut -d"." -f1-3`.0/24 must be changed.
+Where's vmx0 you must change with you pfsense lan nic name, so to use that you need to have a name standard on all you pfSense
+instances and put always the same nic name as you lan network and then you will be able to create rule for some destination from
+each lan network present on your pfSense intances.
+
+E.g cause you vmx0 has an IP from 192.168.1.0/24 network so.
+`ifconfig vmx0 | grep inet | grep -v inet6 | awk '{print $2}' | cut -d"." -f1-3`.0/24 = 192.168.1.0/24
+
+so this {easyrule pass lan any `ifconfig vmx0 | grep inet | grep -v inet6 | awk '{print $2}' | cut -d"." -f1-3`.0/24 any}
+is equal that {easyrule pass lan any 192.168.1.0/24 any} so using like this ansible will be able to apply a different rule for each
+pfSense instance based on ip has set up on lan nic in this E.g vmx0
+
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+The role is using vars present on group_vars/pfsense
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+There's no dependencies to this role
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+All roles are comment, to use rules role in rules/task/main.yml by your needs.
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+# pfsense playbook
+
+- name: pfSense 2.4.4 Playbook
+  hosts: pfsense
+  roles:
+   #- backup
+   #- alias
+   #- rule
+   - update
+   #- common
 
 License
 -------
@@ -35,4 +54,4 @@ BSD
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+by 5h0ckw4v3
