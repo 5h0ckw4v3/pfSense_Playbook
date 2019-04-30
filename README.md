@@ -1,3 +1,3 @@
 # pfSense_Playbook
 
-By now pfSense does not work in way to make easy the managemtn an environment with a lot of pfSense instances, but it's possible manage some jobs by terminal like create alias, rules, backups and packages and system update and then I've built a basic playbook to run these activities in a easiest way using Ansible.
+By now pfSense2.4.4-p2 does not work in way to make easy the management an environment with a lot of pfSense instances, but it's possible manage some taks by terminal like create alias, rules, backups and packages/system update, so I've built this very basic ansible playbook to run these activities in a easiest way using Ansible.
