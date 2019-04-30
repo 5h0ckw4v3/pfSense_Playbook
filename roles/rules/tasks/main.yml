@@ -1,16 +1,16 @@
 ---
 
 # tasks file for rules
-#- name: Permitindo acesso a partir da rede lan para qualquer destino
+#- name: Allow full access from lan network to any
 #  shell: easyrule pass lan any `ifconfig vmx0 | grep inet | grep -v inet6 | awk '{print $2}' | cut -d"." -f1-3`.0/24 any
 
-#- name: blockando a saida para internet de um host
+#- name: Block out traffic from a host
 #  shell: easytule block lan 192.168.1.1
 
-#- name: desbloquando a saida de um host bloquado
+#- name: Unblock out traffic from a host
 #  shell: easyrule unblock lan 192.168.1.1
 
-#- name: Adicionando uma regra de liberacao para host_ips_alias
+#- name: Add allow rule by host alias 
 #  shell: easyrule pass lan any "host_ips_alias"  any
 
 
