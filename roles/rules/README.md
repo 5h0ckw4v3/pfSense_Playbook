@@ -43,7 +43,7 @@ All roles are comment, to use rules role in rules/task/main.yml by your needs.
    #- backup
    #- alias
    #- rule
-   - update
+    - update
    #- common
 
 License
