@@ -20,13 +20,19 @@ Obs: Avoid to use defaul user Admin if you use him this playbook may does not wo
 
 To learn how to use this playbook read readme's roles, each role has its own readme with instructions to create backup, alias, rules and to update packages and system.
 
-Case you are starting from scratch with ansible, bellow some steps to you set ansible up and then run this playbook.
+Case you are starting from scratch with ansible, bellow some steps to you set ansible up on centOS7 and then after that you will be able to run this playbook (edited by you before, of course).
   
   centOS 7
-  - sudo yum update -y
+  -
+  
   - sudo yum install epel-release -y
+  - sudo yum update -y
   - sudo yum install ansible -y
-  - git clone 
+  - git clone https://github.com/5h0ckw4v3/pfSense_Playbook.git
+  - cd pfSense_Playbook
+  - cp ansible_config/.vimrc /home/your_user
+  - sudo mv /etc/ansible/ansible.cfg /etc/ansible/ansible_old.cfg
+  - sudo cp ansible_config/ansible.cfg /etc/ansible/
 
 5h0ckw4v3
 -
