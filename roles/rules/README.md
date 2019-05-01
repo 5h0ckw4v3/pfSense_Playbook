@@ -41,9 +41,13 @@ All roles are comment, to use rules role in rules/task/main.yml by your needs.
   hosts: pfsense
   roles:
    #- backup
+   
    #- alias
+   
    #- rule
+   
     - update
+    
    #- common
 
 License
