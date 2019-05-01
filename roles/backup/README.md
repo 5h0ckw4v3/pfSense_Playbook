@@ -26,12 +26,19 @@ All roles are comment, to use backup role, configure /roles/backup/tasks/main.ym
 # pfsense playbook
 
 - name: pfSense 2.4.4 Playbook
+
   hosts: pfsense
+
   roles:
-   - backup
+  
+    - backup
+  
    #- alias
+   
    #- rule
+   
    #- update
+   
    #- common
 
 License
