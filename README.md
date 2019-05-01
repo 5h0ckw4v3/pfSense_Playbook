@@ -34,5 +34,5 @@ Case you are starting from scratch with ansible, bellow some steps to you set an
   - sudo mv /etc/ansible/ansible.cfg /etc/ansible/ansible_old.cfg
   - sudo cp ansible_config/ansible.cfg /etc/ansible/
 
-5h0ckw4v3
+By 5h0ckw4v3
 -
