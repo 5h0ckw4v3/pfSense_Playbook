@@ -5,10 +5,17 @@ By now pfSense2.4.4-p2 there's no way to make easy the management an environment
 To be able to use this playbook follow steps bellow;
   
   - create administrator user or give all ssh privileges to this user
+  
   - install sudo package on pfsense
-  - On system/sudo select this user, run as select User: root, select checkbox No password, and on Command list type ALL.
+  
+  - On system/sudo set it up like bellow;
+      - select this user
+      - run as select User: root
+      - select checkbox No password
+      - In Command list box type ALL
+      
   - On custom configuration set up to Include at End and Save.
   
   Obs: Avoid to use defaul user Admin if you use him this playbook may does not works as you want.
-  
- 
+
+5h0ckw4v3
