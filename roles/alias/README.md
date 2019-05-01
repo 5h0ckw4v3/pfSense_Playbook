@@ -28,10 +28,15 @@ All roles are comment, to use alias configure ./file/alias.txt and alias/task/ma
 - name: pfSense 2.4.4 Playbook
   hosts: pfsense
   roles:
+  
    #- backup
+   
    - alias
+   
    #- rule
+   
    #- update
+   
    #- common
 
 License
