@@ -17,7 +17,7 @@ E.g cause you vmx0 has an IP from 192.168.1.0/24 network so.
 
 so this {easyrule pass lan any `ifconfig vmx0 | grep inet | grep -v inet6 | awk '{print $2}' | cut -d"." -f1-3`.0/24 any}
 is equal that {easyrule pass lan any 192.168.1.0/24 any} so using like this ansible will be able to apply a different rule for each
-pfSense instance based on ip has set up on lan nic in this E.g vmx0
+pfSense instance based on ip has set up on lan nic in this example vmx0
 
 
 Role Variables
