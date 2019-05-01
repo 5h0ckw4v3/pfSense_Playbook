@@ -6,7 +6,7 @@ pfSense update role
 Requirements
 ------------
 
-change packages that will be updated
+change packages that will be updated in ./tasks/main.yml
 
 Role Variables
 --------------
@@ -26,12 +26,19 @@ All roles are comment, to use update role first check the package that will upda
 # pfsense playbook
 
 - name: pfSense 2.4.4 Playbook
+
   hosts: pfsense
+
   roles:
+  
    #- backup
+ 
    #- alias
+   
    #- rule
+   
    - update
+   
    #- common
 
 License
