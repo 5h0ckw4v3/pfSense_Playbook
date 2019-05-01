@@ -16,6 +16,8 @@ To be able to use this playbook follow steps bellow;
       
   - On custom configuration set up to Include at End and Save.
   
-  Obs: Avoid to use defaul user Admin if you use him this playbook may does not works as you want.
+Obs: Avoid to use defaul user Admin if you use him this playbook may does not works as you want.
+
+To learn how to use this playbook read readme's roles, each role has its own readme with instructions to create backup, alias, rules and to update packages and system.  
 
 5h0ckw4v3
