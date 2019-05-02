@@ -1,6 +1,6 @@
 ansible_ssh_port: 22
-ansible_ssh_user: npro
-ansible_ssh_pass: npro
+ansible_ssh_user: insert_your_user_here
+ansible_ssh_pass: insert_your_user_here
 ansible_become: yes
 ansible_become_method: sudo	
 ansible_connection: ssh
