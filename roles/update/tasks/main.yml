@@ -4,8 +4,12 @@
 #- name: pfSense update by package E.g pfSense-pkg-squid 
 #  shell: pkg upgrade pfSense-pkg-squid
 
-- name: pfSense update - repo update
-  shell: pkg update
+#- name: pfSense update - repo update
+#  shell: pkg update
   
-- name: pfSense update - system update
-  shell: pkg upgrade -y
+#- name: pfSense update - system update
+#  shell: pkg upgrade -y
+
+#- name: pfSense zabbix-proxy install
+#  shell: pkg remove -y pfSense-pkg-zabbix-proxy42
+

@@ -7,17 +7,17 @@ Requirements
 ------------
 
 change the alias name in /roles/rules/tasks/main.yml
-this part of shell command `ifconfig vmx0 | grep inet | grep -v inet6 | awk '{print $2}' | cut -d"." -f1-3`.0/24 must be changed.
+this part of shell command `ifconfig vmx1 | grep inet | grep -v inet6 | awk '{print $2}' | cut -d"." -f1-3`.0/24 must be changed.
 Where's vmx0 you must change with you pfsense lan nic name, so to use that you need to have a name standard on all you pfSense
 instances and put always the same nic name as you lan network and then you will be able to create rule for some destination from
 each lan network present on your pfSense intances.
 
-E.g cause you vmx0 has an IP from 192.168.1.0/24 network so.
+E.g cause you vmx1 has an IP from 192.168.1.0/24 network so.
 `ifconfig vmx0 | grep inet | grep -v inet6 | awk '{print $2}' | cut -d"." -f1-3`.0/24 = 192.168.1.0/24
 
-so this {easyrule pass lan any `ifconfig vmx0 | grep inet | grep -v inet6 | awk '{print $2}' | cut -d"." -f1-3`.0/24 any}
+so this {easyrule pass lan any `ifconfig vmx1 | grep inet | grep -v inet6 | awk '{print $2}' | cut -d"." -f1-3`.0/24 any}
 is equal that {easyrule pass lan any 192.168.1.0/24 any} so using like this ansible will be able to apply a different rule for each
-pfSense instance based on ip has set up on lan nic in this example vmx0
+pfSense instance based on ip has set up on lan nic in this example vmx1
 
 
 Role Variables

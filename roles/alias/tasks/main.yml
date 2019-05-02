@@ -2,10 +2,10 @@
 
 # tasks file for alias
 
-- name: copyingalias.txt to /home/user
-  copy: src=alias.txt dest=/home/user
+- name: copyingalias.txt to /home/npro
+  copy: src=alias.txt dest=/home/npro
 
 - name: Creating/Updating alias
-  shell: /usr/local/sbin/pfSsh.php < /home/user/alias.txt
+  shell: /usr/local/sbin/pfSsh.php < /home/npro/alias.txt
 
 ...

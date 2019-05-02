@@ -6,6 +6,6 @@
   roles:
     #- backup
     #- alias
-    #- rule
+    - rules
     #- update
     #- common

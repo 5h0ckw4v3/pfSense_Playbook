@@ -21,7 +21,7 @@ There's no dependencies to this role
 Example Playbook
 ----------------
 
-All roles are comment, to use alias configure ./file/alias.txt and alias/task/main.yml by your needs.
+All roles are comment, to use alias role configure ./file/alias.txt and alias/task/main.yml by your needs.
 
 # pfsense playbook
 

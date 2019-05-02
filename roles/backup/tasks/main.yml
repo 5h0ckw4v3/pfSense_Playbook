@@ -1,7 +1,7 @@
 ---
 
 - name: Generating backup file name using hostname + date
-  shell: echo "`hostname`_`date +%Y-%m-%d`"
+  shell: echo "`hostname`_`date +%d-%m-%Y_%H-%M`"
   register: output
 
 - name: Generating backup file
@@ -10,8 +10,17 @@
   - "{{ output.stdout }}"
 
 - name: Downloading backup file
-  fetch: src=/tmp/{{item}}.xml dest=/ansible/pfsense/roles/backup/files
+  fetch: 
+    src: /tmp/{{item}}.xml 
+    dest: /home/npro/pfSense_Playbook/roles/backup/files/
+    flat: yes
   loop:
   - "{{ output.stdout }}"
 
+- name: Removing backup file from /tmp on pfsense
+  file:
+    path: /tmp/{{item}}.xml
+    state: absent
+  loop:
+  - "{{ output.stdout }}"
 ...
