@@ -10,6 +10,4 @@
 #- name: pfSense update - system update
 #  shell: pkg upgrade -y
 
-#- name: pfSense zabbix-proxy install
-#  shell: pkg remove -y pfSense-pkg-zabbix-proxy42
 

@@ -2,7 +2,7 @@
 
 # tasks file for rules
 - name: Allow full access from lan network to any
-  shell: easyrule pass lan any `ifconfig vmx1 | grep inet | grep -v inet6 | awk '{print $2}' | cut -d"." -f1-3`.0/24 any
+  shell: easyrule pass opt1 any `ifconfig vmx2 | grep inet | grep -v inet6 | awk '{print $2}' | cut -d"." -f1-3`.0/24 "aliasname"
 
 #- name: Block out traffic from a host
 #  shell: easytule block lan 192.168.1.1

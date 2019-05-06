@@ -2,10 +2,23 @@
 
 # tasks file for alias
 
-- name: copyingalias.txt to /home/npro
-  copy: src=alias.txt dest=/home/npro
+# Getting user path from home variable
+- name: Registering user path variable 
+  shell: echo $HOME
+  register: output
 
+# Copying alias file to home user
+- name: copying alias.txt to {{output.stdout}}
+  copy: src=alias.txt dest=$HOME
+
+# creating/updating alias using pfSsh.php
 - name: Creating/Updating alias
-  shell: /usr/local/sbin/pfSsh.php < /home/npro/alias.txt
+  shell: /usr/local/sbin/pfSsh.php < $HOME/alias.txt
+
+# removing alias file from pfSense
+- name: Removing alias file from {{output.stdout}}
+  file:
+    path: $HOME/alias.txt
+    state: absent
 
 ...

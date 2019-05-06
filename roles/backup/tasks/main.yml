@@ -12,7 +12,7 @@
 - name: Downloading backup file
   fetch: 
     src: /tmp/{{item}}.xml 
-    dest: /home/npro/pfSense_Playbook/roles/backup/files/
+    dest: roles/backup/files/
     flat: yes
   loop:
   - "{{ output.stdout }}"
