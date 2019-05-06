@@ -1,4 +1,4 @@
-# pfSense_Playbook
+# pfSense_Playbook - pfsense ansible playbook
 
 By now pfSense2.4.4-p2 there's no way to make easy the management an environment with a lot of pfSense instances, but it's possible manage some tasks by terminal like create alias, rules, backups and packages/system update, so I've built this very basic ansible playbook to run these activities in a easiest way using Ansible for environments with many pfSense instances.
 
