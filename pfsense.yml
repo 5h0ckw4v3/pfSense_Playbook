@@ -3,6 +3,7 @@
 
 - name: pfSense 2.4.4 Playbook
   hosts: pfsense
+  gather_facts: False
   roles:
     #- backup
     #- alias
